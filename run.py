@@ -26,6 +26,11 @@ def contact():
     return render_template("contact.html")
 
 
+@app.route("/careers")fffc 
+def careers():
+    return render_template("careers.html")
+
+
 
 if __name__ == "__main__":
     app.run(
@@ -38,3 +43,9 @@ if __name__ == "__main__":
 
     
 
+
+"""
+Notes: 
+- Flask and Django frameworks allow us to reuse as much code as possible.
+- Resusing templates and {%%} 
+"""
