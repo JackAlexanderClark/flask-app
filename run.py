@@ -26,7 +26,7 @@ def contact():
     return render_template("contact.html")
 
 
-@app.route("/careers")fffc 
+@app.route("/careers")
 def careers():
     return render_template("careers.html")
 
