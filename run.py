@@ -8,16 +8,16 @@ import os
 from flask import Flask, render_template
 
 
-app = Flask(__name__)       # Instance of Flask class
+app = Flask(__name__)
 
-
-@app.route("/index")     # Decorators wrap around the function
+# Adding an additional argument into return statement
+@app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", page_title="About")
 
 
-@app.route("/about")        # Routing to about.html
-def about():        # View function must match url_for text
+@app.route("/about")
+def about():
     return render_template("about.html")
 
 
@@ -31,17 +31,11 @@ def careers():
     return render_template("careers.html")
 
 
-
 if __name__ == "__main__":
     app.run(
-        host=os.environ.get("IP", "0.0.0.0"),       # Using os module to .get the 'IP' environment
-        port=int(os.environ.get("PORT", "5000")), 
-        debug=True)     # debug=True allows easier debug later in dev
-                        # must not be used in production code as security flaw
-
-
-
-    
+        host=os.environ.get("IP", "0.0.0.0"),
+        port=int(os.environ.get("PORT", "5000")),
+        debug=True)
 
 
 """
